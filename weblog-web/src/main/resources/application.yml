@@ -2,3 +2,11 @@ spring:
   profiles:
     # 默认测试环境 dev
     active: dev
+jwt:
+    issuer: quanxiaoha
+    secret: HgtHeHCKtSlyERcYEkmxjIBHy2Ii7VdXOahtihT+Q89/pie6bqvwpzlypIb83uRqjjpHuWkDCb1iPGak3Lp6rw==
+    tokenExpireTime: 1440
+  # token 请求头中的 key 值
+    tokenHeaderKey: Authorization
+  # token 请求头中的 value 值前缀
+    tokenPrefix: Bearer
