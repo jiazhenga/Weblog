@@ -24,6 +24,7 @@ public enum ResponseCodeEnum implements BaseExceptionInterface {
 
     FORBIDDEN("20004", "演示账号仅支持查询操作！"),
     USERNAME_NOT_FOUND("20003", "该用户不存在"),
+    CATEGORY_NAME_IS_EXISTED("20005", "该分类已存在，请勿重复添加！"),
     ;
     // 异常码
     private String errorCode;

@@ -1,7 +1,7 @@
 package com.oiazheng.weblog.admin.service.impl;
 
-import com.oiazheng.weblog.admin.model.vo.FindUserInfoRspVO;
-import com.oiazheng.weblog.admin.model.vo.UpdateAdminUserPasswordReqVO;
+import com.oiazheng.weblog.admin.model.vo.user.FindUserInfoRspVO;
+import com.oiazheng.weblog.admin.model.vo.user.UpdateAdminUserPasswordReqVO;
 import com.oiazheng.weblog.admin.service.AdminUserService;
 import com.oiazheng.weblog.common.domain.mapper.UserMapper;
 import com.oiazheng.weblog.common.enums.ResponseCodeEnum;
