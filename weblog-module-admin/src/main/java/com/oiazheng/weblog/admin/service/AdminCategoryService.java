@@ -1,6 +1,6 @@
 package com.oiazheng.weblog.admin.service;
 
-import com.oiazheng.weblog.admin.model.FindCategoryPageListReqVO;
+import com.oiazheng.weblog.admin.model.vo.category.FindCategoryPageListReqVO;
 import com.oiazheng.weblog.admin.model.vo.category.AddCategoryReqVO;
 import com.oiazheng.weblog.admin.model.vo.category.DeleteCategoryReqVO;
 import com.oiazheng.weblog.common.utils.PageResponse;
@@ -19,7 +19,7 @@ public interface AdminCategoryService {
      * @param findCategoryPageListReqVO
      * @return
      */
-    PageResponse findCategoryList(FindCategoryPageListReqVO findCategoryPageListReqVO);
+    PageResponse findCategoryPageList(FindCategoryPageListReqVO findCategoryPageListReqVO);
 
     /**
      * 删除分类

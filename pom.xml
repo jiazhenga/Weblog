@@ -54,6 +54,7 @@
         <mybatis-plus.version>3.5.2</mybatis-plus.version>
         <p6spy.version>3.9.1</p6spy.version>
         <jjwt.version>0.11.2</jjwt.version>
+        <minio.version>8.2.1</minio.version>
     </properties>
 
     <dependencies>
@@ -144,6 +145,13 @@
                 <artifactId>jjwt-jackson</artifactId>
                 <version>${jjwt.version}</version>
             </dependency>
+
+            <dependency>
+                <groupId>io.minio</groupId>
+                <artifactId>minio</artifactId>
+                <version>${minio.version}</version>
+            </dependency>
+
 
         </dependencies>
 

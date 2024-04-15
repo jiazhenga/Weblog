@@ -35,8 +35,8 @@ public class Knife4jConfig {
         return new ApiInfoBuilder()
                 .title("Weblog Web API")
                 .description("Weblog 是一款由 Spring Boot + Vue 3.2 + Vite 4.3 开发的前后端分离博客系统")
-                .termsOfServiceUrl("https://www.oiazheng.com/")
-                 .contact(new Contact("阿政a", "https://www.oiazheng.com/", "1450278436@qq.com"))
+                .termsOfServiceUrl("https://www.quanxiaoha.com/")
+                 .contact(new Contact("阿政a", "https://www.quanxiaoha.com/", "1450278436@qq.com"))
                 .version("1.0")
                 .build();
     }
