@@ -50,4 +50,13 @@ public class FindArticleDetailRspVO {
      * 下一篇文章
      */
     private FindPreNextArticleRspVO nextArticle;
+    /**
+     * 总字数
+     */
+    private Integer totalWords;
+
+    /**
+     * 阅读时长
+     */
+    private String readTime;
 }

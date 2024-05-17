@@ -20,6 +20,13 @@
             <artifactId>weblog-module-common</artifactId>
         </dependency>
 
+        <dependency>
+            <groupId>com.oiazheng</groupId>
+            <artifactId>weblog-module-search</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+
+
 
         <dependency>
             <groupId>org.projectlombok</groupId>

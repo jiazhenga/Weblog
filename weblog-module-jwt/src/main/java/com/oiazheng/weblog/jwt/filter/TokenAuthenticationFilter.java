@@ -26,6 +26,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.nio.file.AccessDeniedException;
 import java.util.Objects;
 
 
@@ -52,10 +53,10 @@ public class TokenAuthenticationFilter extends OncePerRequestFilter {
         String requestURI = request.getRequestURI();
         if (requestURI.startsWith("/admin")) {
             // 从请求头中获取 key 为 Authorization 的值
-            String header = request.getHeader("Authorization");
+            String header = request.getHeader(tokenHeaderKey);
 
             // 判断 value 值是否以 Bearer 开头
-            if (StringUtils.startsWith(header, "Bearer")) {
+            if (StringUtils.startsWith(header, tokenPrefix)) {
                 // 截取 Token 令牌
                 String token = StringUtils.substring(header, 7);
                 log.info("Token: {}", token);

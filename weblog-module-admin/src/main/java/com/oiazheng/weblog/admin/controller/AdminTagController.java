@@ -11,6 +11,7 @@ import com.oiazheng.weblog.common.utils.Response;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -30,6 +31,7 @@ public class AdminTagController {
     @PostMapping("/tag/add")
     @ApiOperation(value = "添加标签")
     @ApiOperationLog(description = "添加标签")
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
     public Response addTag(@RequestBody @Validated AddTagReqVO addTagReqVO) {
         return tagService.addTag(addTagReqVO);
     }
@@ -44,6 +46,7 @@ public class AdminTagController {
     @PostMapping("/tag/delete")
     @ApiOperation(value = "删除标签")
     @ApiOperationLog(description = "删除标签")
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
     public Response deleteTag(@RequestBody @Validated DeleteTagReqVO deleteTagReqVO) {
         return tagService.deleteTag(deleteTagReqVO);
     }
@@ -54,12 +57,5 @@ public class AdminTagController {
     public Response searchTag(@RequestBody @Validated SearchTagReqVO searchTagReqVO) {
         return tagService.searchTag(searchTagReqVO);
     }
-//
-//    @PostMapping("/tag/select/list")
-//    @ApiOperation(value = "标签Select 下拉列表数据获取")
-//    @ApiOperationLog(description = "标签Select 下拉列表数据获取")
-//    public Response findTagSelectList() {
-//        return tagService.finTagSelectList();
-//    }
 
 }

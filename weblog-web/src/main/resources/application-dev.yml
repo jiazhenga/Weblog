@@ -25,3 +25,6 @@ minio:
   accessKey: oiazheng
   secretKey: oiazheng
   bucketName: weblog
+
+lucene:
+  indexDir: D:\\Hammer\\Study\\Java\\Project\\Weblog\\lucene-index # lucene 索引存放的位置

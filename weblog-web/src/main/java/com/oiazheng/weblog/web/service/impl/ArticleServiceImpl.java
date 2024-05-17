@@ -13,6 +13,7 @@ import com.oiazheng.weblog.common.utils.PageResponse;
 import com.oiazheng.weblog.common.utils.Response;
 import com.oiazheng.weblog.web.convert.ArticleConvert;
 import com.oiazheng.weblog.web.markdown.MarkdownHelper;
+import com.oiazheng.weblog.web.markdown.utils.MarkdownStatsUtil;
 import com.oiazheng.weblog.web.model.vo.article.*;
 import com.oiazheng.weblog.web.model.vo.category.FindCategoryListRspVO;
 import com.oiazheng.weblog.web.model.vo.tag.FindTagListRspVO;
@@ -154,13 +155,19 @@ public class ArticleServiceImpl implements ArticleService {
 
         // 查询正文
         ArticleContentDO articleContentDO = articleContentMapper.selectByArticleId(articleId);
+        String content = articleContentDO.getContent();
+
+        // 计算 md 正文字数
+        Integer totalWords = MarkdownStatsUtil.calculateWordCount(content);
 
         // DO 转 VO
         FindArticleDetailRspVO vo = FindArticleDetailRspVO.builder()
                 .title(articleDO.getTitle())
                 .createTime(articleDO.getCreateTime())
-                .content(MarkdownHelper.convertMarkdown2Html(articleContentDO.getContent()))
+                .content(MarkdownHelper.convertMarkdown2Html(content))
                 .readNum(articleDO.getReadNum())
+                .totalWords(totalWords)
+                .readTime(MarkdownStatsUtil.calculateReadingTime(totalWords))
                 .build();
 
         // 查询所属分类

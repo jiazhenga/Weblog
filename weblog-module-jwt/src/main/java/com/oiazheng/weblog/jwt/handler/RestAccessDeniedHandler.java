@@ -5,6 +5,7 @@ import com.oiazheng.weblog.common.utils.Response;
 import com.oiazheng.weblog.jwt.utils.ResultUtil;
 import io.jsonwebtoken.io.IOException;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.core.annotation.Order;
 import org.springframework.security.access.AccessDeniedException;
 import org.springframework.security.web.access.AccessDeniedHandler;
 import org.springframework.stereotype.Component;
